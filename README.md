@@ -23,4 +23,4 @@ No hay trackers, formularios de captura, cuentas ni backend. La información de 
 
 ## En línea
 
-[CV interactivo publicado](https://jesus-leonardo-desarrollo.leo-jesmtze11.chatgpt.site)
+[CV interactivo publicado](https://yzdemnz.github.io/cv-portafolio/)

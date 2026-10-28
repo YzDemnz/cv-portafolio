@@ -9,7 +9,7 @@
       "Electron",
       "SQLite"
     ],
-    "desc": "Una estación de trabajo con un núcleo que conserva tareas, permisos y evidencia entre distintas superficies de ejecución.",
+    "desc": "Aplicación de escritorio para Windows con gestión de tareas, memoria SQLite, servicios nativos y ejecución por capacidades.",
     "url": "https://github.com/YzDemnz/jarvis-desktop",
     "status": "En desarrollo · 0.4.5-dev",
     "problem": "Coordinar interfaz, proveedores y operaciones sobre Windows sin mezclar una respuesta del modelo con un efecto autorizado o un resultado comprobado.",
