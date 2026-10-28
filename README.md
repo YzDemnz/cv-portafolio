@@ -1,4 +1,4 @@
-# CV y portafolio · Jesús Leonardo Martínez Rodrigues
+# CV y portafolio · Jesús Leonardo Martínez Rodríguez
 
 Sitio estático, accesible y adaptable a móvil. HTML semántico, CSS y JavaScript sin dependencias de ejecución.
 
