@@ -1,0 +1,227 @@
+[
+  {
+    "id": "jarvis",
+    "name": "JARVIS Desktop",
+    "kind": "Escritorio",
+    "tech": [
+      "TypeScript",
+      "C#",
+      "Electron",
+      "SQLite"
+    ],
+    "desc": "Una estación de trabajo con un núcleo que conserva tareas, permisos y evidencia entre distintas superficies de ejecución.",
+    "url": "https://github.com/YzDemnz/jarvis-desktop",
+    "status": "En desarrollo · 0.4.5-dev",
+    "problem": "Coordinar interfaz, proveedores y operaciones sobre Windows sin mezclar una respuesta del modelo con un efecto autorizado o un resultado comprobado.",
+    "architecture": "React y Zustand presentan el estado. El preload expone contratos IPC. El proceso main concentra autoridad, memoria, checkpoints y verificación. Intelligence Fabric abstrae proveedores; Execution Fabric define contratos de ejecución; Tool Broker media capacidades. Helpers C# integran procesos y Windows.",
+    "decisions": [
+      "Separación entre TaskId y OperationId para distinguir continuidad y cada admisión.",
+      "Memoria SQLite y contexto acotado con referencias comprobables.",
+      "SecretRef y políticas de datos; los secretos se resuelven dentro de servicios autorizados.",
+      "Cancelación, recibos y criterios explícitos para verificar artefactos."
+    ],
+    "limits": "Las superficies y backends tienen distintos estados de implementación; algunos módulos de interfaz son simulados. No se presenta como autonomía general ni como aislamiento universal.",
+    "code": "electron/ · src/ · native/ · tests/ · tools/"
+  },
+  {
+    "id": "frontier",
+    "name": "Frontier Atlas",
+    "kind": "Videojuegos",
+    "tech": [
+      "C#",
+      "Unity 6",
+      "URP"
+    ],
+    "desc": "Estrategia territorial sobre un mapa terrestre: economía, ciudades, diplomacia, comercio y combate.",
+    "url": "https://github.com/YzDemnz/frontier-atlas",
+    "status": "Prototipo jugable · Windows",
+    "problem": "Hacer evolucionar un mundo territorial amplio con reglas de campaña y una representación visual que no requiera un objeto por celda.",
+    "architecture": "Entrada e interfaz envían acciones a la simulación canónica. Los módulos de economía, política y combate actualizan el estado. Cámara, render y shaders representan ese estado. Los guardados versionados conservan la campaña.",
+    "decisions": [
+      "Cuadrícula e índices para representar geografía y territorio.",
+      "Separación entre simulación, vista y entrada.",
+      "Instancias y recursos derivados para la representación de estructuras.",
+      "Guardados versionados y lectura de versiones previas."
+    ],
+    "limits": "La campaña local es el alcance documentado. Las exploraciones de red no equivalen a un servicio multijugador público listo para producción.",
+    "code": "Assets/RoFrontPrototype/Scripts · Editor · Shaders"
+  },
+  {
+    "id": "judicial",
+    "name": "Judicial Managment",
+    "kind": "Web y móvil",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Electron",
+      "PostgreSQL"
+    ],
+    "desc": "Gestión jurídica de expedientes, clientes y movimientos, con colaboración organizada por despacho.",
+    "url": "https://github.com/YzDemnz/proyectos-software/tree/main/judicial-managment",
+    "live": "https://judicial-managment-web.leo-jesmtze11.chatgpt.site",
+    "status": "Web publicada · Desarrollo activo",
+    "problem": "Trasladar la organización de un despacho a flujos de software comprensibles para profesionales del Derecho.",
+    "architecture": "Interfaz React/TypeScript con módulos de gestión. Autenticación, persistencia y almacenamiento mediante servicios de backend. Electron permite empaquetar la experiencia de escritorio.",
+    "decisions": [
+      "Organización funcional por expedientes, clientes y movimientos.",
+      "Roles y colaboración por despacho.",
+      "Código de interfaz separado de configuración y datos privados."
+    ],
+    "limits": "El acceso a funciones reales depende del backend y los permisos de cada cuenta. La web publicada puede requerir registro; no se incluyen datos de despachos.",
+    "code": "judicial-managment/src · electron · supabase"
+  },
+  {
+    "id": "mobile",
+    "name": "Judicial Managment Mobile",
+    "kind": "Web y móvil",
+    "tech": [
+      "TypeScript",
+      "React Native",
+      "Expo"
+    ],
+    "desc": "Cliente móvil con expedientes, calendario y colaboración de equipo para el ecosistema Judicial Managment.",
+    "url": "https://github.com/YzDemnz/judicial-managment-mobile",
+    "status": "Cliente móvil en desarrollo",
+    "problem": "Llevar la consulta y colaboración jurídica a una interfaz móvil.",
+    "architecture": "Expo y React Native con TypeScript. Sesión persistente en AsyncStorage, autenticación de backend, chat por despacho y notificaciones del dispositivo para recordatorios.",
+    "decisions": [
+      "Experiencia móvil centrada en expedientes, audiencias y documentos.",
+      "Sesión persistente y enlaces temporales para adjuntos.",
+      "Calendario local y recordatorios del dispositivo."
+    ],
+    "limits": "Hay pantallas pendientes de conexión completa a tablas reales y sincronización del calendario. No se afirma que existan builds públicos para Android o iOS.",
+    "code": "App.tsx · src/lib · scripts"
+  },
+  {
+    "id": "portal",
+    "name": "Portal Judicial Managment",
+    "kind": "Web y móvil",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite"
+    ],
+    "desc": "Página de distribución y acceso al producto, con registro, confirmación de correo y descarga de escritorio.",
+    "url": "https://github.com/YzDemnz/judicial-managment-portal",
+    "status": "Código público",
+    "problem": "Dar una entrada clara al producto, la cuenta y la distribución de su aplicación de escritorio.",
+    "architecture": "Frontend React con Vite y TypeScript. Flujos de autenticación y confirmación de correo, enlaces de descarga y apertura de la aplicación.",
+    "decisions": [
+      "Configuración de entorno separada del código.",
+      "Flujo de acceso y confirmación de cuenta.",
+      "Distribución controlada y rutas de retorno."
+    ],
+    "limits": "Las descargas y autenticación dependen del despliegue configurado. Es un portal distinto de la aplicación jurídica completa.",
+    "code": "src/App.tsx · src/lib · scripts"
+  },
+  {
+    "id": "microapp",
+    "name": "MicroApp",
+    "kind": "Web y móvil",
+    "tech": [
+      "TypeScript",
+      "React Native",
+      "Express",
+      "SQLite"
+    ],
+    "desc": "Operación de pequeños negocios: inventario, ventas, clientes y un backend local.",
+    "url": "https://github.com/YzDemnz/proyectos-software/tree/main/microapp",
+    "status": "Prototipo de aplicación",
+    "problem": "Concentrar tareas de un negocio pequeño en una aplicación móvil conectada a un backend sencillo.",
+    "architecture": "Expo/React Native en el cliente. Node y Express exponen la API; sql.js almacena los datos en SQLite. La web de presentación funciona de forma independiente.",
+    "decisions": [
+      "Separar cliente móvil, backend y sitio comercial.",
+      "API para perfil del negocio, inventario, configuración y exportación.",
+      "Persistencia local y configuración externa para integraciones."
+    ],
+    "limits": "Pagos, mensajería y servicios externos necesitan configuración y validación propias. No se publican bases de negocios ni documentos legales en borrador.",
+    "code": "microapp/src · backend · website"
+  },
+  {
+    "id": "lumen",
+    "name": "LUMEN",
+    "kind": "Web y móvil",
+    "tech": [
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "desc": "Biblioteca digital con catálogo, búsqueda y administración de archivos PDF y EPUB.",
+    "url": "https://github.com/YzDemnz/proyectos-software/tree/main/lumen",
+    "status": "Aplicación en desarrollo",
+    "problem": "Organizar un catálogo consultable y controlar quién sube, descarga o elimina sus archivos.",
+    "architecture": "React/Vite para interfaz, autenticación y metadatos en backend, y almacenamiento privado con enlaces temporales de descarga.",
+    "decisions": [
+      "Catálogo, búsqueda y filtros por categoría.",
+      "Separación entre fichas y objetos de almacenamiento.",
+      "Restricciones de formato, tamaño y propiedad de archivos."
+    ],
+    "limits": "Las restricciones de carga no equivalen a análisis antivirus. La ampliación de red social permanece pendiente. No se redistribuyen libros ni datos de cuentas.",
+    "code": "lumen/src · supabase/migrations · tests"
+  },
+  {
+    "id": "bot",
+    "name": "Discord Community Bot",
+    "kind": "Automatización",
+    "tech": [
+      "JavaScript",
+      "Node.js",
+      "discord.js"
+    ],
+    "desc": "Tickets privados, moderación, archivos temporales y recordatorios de progresión para una comunidad.",
+    "url": "https://github.com/YzDemnz/proyectos-software/tree/main/discord-community-bot",
+    "status": "Servicios y pruebas modulares",
+    "problem": "Gestionar solicitudes y moderación con reglas consistentes y estado persistente.",
+    "architecture": "Servicios de dominio para tickets, moderación, archivos y promociones; controladores de interfaz Discord; colas por clave y persistencia JSON con escritura atómica.",
+    "decisions": [
+      "Separar reglas de negocio de las interacciones de Discord.",
+      "Serializar operaciones por entidad para evitar conflictos.",
+      "Token en entorno y configuración de ejemplo sin datos de miembros."
+    ],
+    "limits": "La copia pública requiere configurar IDs y permisos de una comunidad propia. No contiene tickets, miembros ni registros de producción.",
+    "code": "domain.mjs · moderation.mjs · archives.mjs · *.test.mjs"
+  },
+  {
+    "id": "bastion",
+    "name": "Bastión / Night Shift",
+    "kind": "Videojuegos",
+    "tech": [
+      "Luau",
+      "Roblox",
+      "Rojo"
+    ],
+    "desc": "Prototipo cooperativo de supervivencia: oleadas, arsenal, compras y lógica de combate en servidor.",
+    "url": "https://github.com/YzDemnz/proyectos-software/tree/main/bastion",
+    "status": "Vertical slice",
+    "problem": "Construir un ciclo de combate y progresión en el que las reglas principales se validen en el servidor.",
+    "architecture": "Módulos compartidos para configuración y reglas; servicios de servidor para daño, cadencia, munición, compras y oleadas; controladores cliente para cámara, controles y HUD.",
+    "decisions": [
+      "Autoridad de combate y compras en servidor.",
+      "Separación shared/server/client.",
+      "Pruebas de reglas y transacciones con servicios simulados."
+    ],
+    "limits": "Los datos duran la sesión; no hay DataStore. La aceptación de física, cámara y varias personas requiere Roblox Studio.",
+    "code": "bastion/src/shared · src/server · src/client"
+  },
+  {
+    "id": "blender",
+    "name": "Herramientas Blender / Workbench",
+    "kind": "Automatización",
+    "tech": [
+      "Python",
+      "Blender"
+    ],
+    "desc": "Scripts de construcción y comprobación para un flujo de modelos y recursos de juego.",
+    "url": "https://github.com/YzDemnz/proyectos-software/tree/main/blender-workbench",
+    "status": "Herramientas de estudio",
+    "problem": "Reducir trabajo repetitivo al preparar recursos y comprobar pasos de un flujo 3D.",
+    "architecture": "Scripts Python ejecutados en el contexto de Blender, con funciones de construcción y comprobación. La integración con Workbench depende del entorno y de sus herramientas oficiales.",
+    "decisions": [
+      "Trabajar sobre copias de recursos.",
+      "Separar scripts propios de dependencias y archivos del motor.",
+      "Registrar límites entre una exportación de prueba y una integración completa."
+    ],
+    "limits": "No es un addon universal ni acredita un mod completo. Requiere adaptar rutas e instalar Blender y herramientas oficiales por separado.",
+    "code": "blender-workbench/*.py"
+  }
+]
